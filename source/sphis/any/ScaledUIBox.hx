@@ -1,4 +1,4 @@
-package sphis.any.ui;
+package sphis.any;
 
 import flixel.graphics.FlxGraphic;
 import flixel.math.FlxPoint;
