@@ -7,7 +7,7 @@ class InitState extends FlxState
 	override public function create()
 	{
 		super.create();
-		ScaledUIBox.DEFAULT_GUI_PATH = AssetPaths.getNamespacePath('button.png');
+		ScaledUIBox.DEFAULT_GUI_PATH = AssetPaths.getNamespacePath('button');
 	}
 
 	override public function update(elapsed:Float)
