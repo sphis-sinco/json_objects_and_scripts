@@ -3,6 +3,7 @@ package sphis.joas.gui;
 import flixel.FlxSprite;
 import flixel.text.FlxText;
 import sphis.any.ScaledUIBox;
+import flixel.util.FlxDestroyUtil;
 
 class TextScaledUIBox extends ScaledUIBox
 {
@@ -13,18 +14,18 @@ class TextScaledUIBox extends ScaledUIBox
 	public var text(get, set):String;
 	inline function get_text():String
 	{
-		return (text_field. != null) ? text_field..text : null;
+		return (text_field != null) ? text_field.text : null;
 	}
 
 	inline function set_text(Text:String):String
 	{
-		if (text_field. == null)
+		if (text_field == null)
 		{
 			initLabel(Text);
 		}
 		else
 		{
-			text_field..text = Text;
+			text_field.text = Text;
 		}
 		return Text;
 	}
@@ -84,6 +85,8 @@ class TextScaledUIBox extends ScaledUIBox
 	override public function new(params:ScaledUIBoxParameters, ?Text:String)
 	{
 		super(params);
+
+        this.updatedSlicedHitbox();
 
 		initLabel(Text ?? "");
 	}

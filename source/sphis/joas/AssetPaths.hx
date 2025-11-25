@@ -4,6 +4,7 @@ class AssetPaths
 {
 	public static function getNamespacePath(path:String, ?namespace:String = 'joas')
 	{
+		trace('assets/' + namespace + '/' + path);
 		return 'assets/' + namespace + '/' + path;
 	}
     
