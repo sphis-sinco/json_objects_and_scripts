@@ -25,6 +25,7 @@ typedef ScaledUIBoxGraphicParameters =
 class ScaledUIBox extends FlxScaledSliceSprite
 {
 	public static var DEFAULT_GUI_PATH:String = 'gui/button';
+	public static var UI_SCALE_MULTIPLIER:Int = 4;
 
 	override public function new(params:ScaledUIBoxParameters)
 	{
@@ -33,9 +34,9 @@ class ScaledUIBox extends FlxScaledSliceSprite
 		var ui_base_corner_radius = params.graphic?.corner_radius ?? 4;
 		var ui_base_slice = new FlxRect(ui_base_corner_radius, ui_base_corner_radius, Std.int(ui_base_graphic.width / 2), Std.int(ui_base_graphic.height / 2));
 
-		super(ui_base_graphic, ui_base_slice, Constants.UI_SCALE_MULTIPLIER + (params.general_scale_addition - 1),
-			ui_base_slice.width * (Constants.UI_SCALE_MULTIPLIER + params.general_scale_addition + params.width_scale_addition),
-			ui_base_slice.height * (Constants.UI_SCALE_MULTIPLIER + params.general_scale_addition + params.height_scale_addition));
+		super(ui_base_graphic, ui_base_slice, UI_SCALE_MULTIPLIER + (params.general_scale_addition - 1),
+			ui_base_slice.width * (UI_SCALE_MULTIPLIER + params.general_scale_addition + params.width_scale_addition),
+			ui_base_slice.height * (UI_SCALE_MULTIPLIER + params.general_scale_addition + params.height_scale_addition));
 
 		this.setPosition(params.position.x, params.position.y);
 	}
